@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <p>Are you sure you want to Delete this line item?</p>
+  <mat-form-field>
+    <input matInput [disabled]="true" [(ngModel)]="data.productNumber" placeholder="Product Number">
+  </mat-form-field>&nbsp;
+
+  <mat-form-field>
+        <input matInput [disabled]="true" [(ngModel)]="data.orderQuantity" placeholder="Order Quanitity">
+      </mat-form-field>&nbsp;
+
+      <mat-form-field>
+            <input matInput [disabled]="true" [(ngModel)]="data.unitPrice" placeholder="Unit Price">
+          </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="0">No</button>
+  <button mat-button [mat-dialog-close]="data.index" cdkFocusInitial>Yes</button>
+</div>
+

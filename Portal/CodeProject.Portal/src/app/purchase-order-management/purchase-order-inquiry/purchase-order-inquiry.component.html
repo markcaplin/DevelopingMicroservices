@@ -1,0 +1,82 @@
+
+<app-purchase-order-management-nav-bar></app-purchase-order-management-nav-bar>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Purchase Order Inquiry</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form #form="ngForm">
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="Name" #searchField value="{{purchaseOrderInquiryViewModel.supplierName}}" [(ngModel)]="purchaseOrderInquiryViewModel.supplierName"
+            placeholder="Supplier Name">
+        </mat-form-field>
+        &nbsp;
+        <button mat-flat-button color="primary" (click)="resetSearch()">Reset</button>&nbsp;
+      </div>
+
+    </form>
+
+    <mat-paginator [length]="purchaseOrderInquiryViewModel.totalPurchaseOrders" [showFirstLastButtons]="true"
+      [pageIndex]="purchaseOrderInquiryViewModel.currentPageIndex" [pageSize]="purchaseOrderInquiryViewModel.pageSize"
+      [pageSizeOptions]="purchaseOrderInquiryViewModel.pageSizeOptions" (page)="onPaginateChange($event)"></mat-paginator>
+
+    <table mat-table [dataSource]="purchaseOrderInquiryViewModel.purchaseOrders" matSort (matSortChange)="sortData($event)"
+      class="mat-elevation-z8">
+
+      <ng-container matColumnDef="purchaseOrderNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="PurchaseOrderNumber"> PO Number</th>
+        <td mat-cell *matCellDef="let element"> {{element.purchaseOrderNumber}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="supplierName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="Supplier.Name"> Supplier Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.supplierName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="Supplier.City"> City </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="region">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="Supplier.Region"> State </th>
+        <td mat-cell *matCellDef="let element"> {{element.region}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="orderTotal">
+          <th mat-header-cell *matHeaderCellDef  mat-sort-header="OrderTotal">Order Total</th>
+          <td mat-cell *matCellDef="let element"> {{element.orderTotal | currency}} </td>
+        </ng-container>
+
+      <ng-container matColumnDef="orderDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="DateCreated"> Order Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.orderDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="purchaseOrderStatusDescription">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="PurchaseOrderStatus.Description">Status</th>
+        <td mat-cell *matCellDef="let element"> {{element.purchaseOrderStatusDescription}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="purchaseOrderInquiryViewModel.displayedColumns"></tr>
+      <tr style="cursor: pointer;" mat-row *matRowDef="let row; columns: purchaseOrderInquiryViewModel.displayedColumns; let i = index"
+        (click)="selectPurchaseOrder(i)"></tr>
+
+    </table>
+
+  </mat-card-content>
+  <mat-card-actions>
+
+
+    <mat-paginator [length]="purchaseOrderInquiryViewModel.totalPurchaseOrders" [showFirstLastButtons]="true"
+      [pageSize]="purchaseOrderInquiryViewModel.pageSize" [pageIndex]="purchaseOrderInquiryViewModel.currentPageIndex"
+      [pageSizeOptions]="purchaseOrderInquiryViewModel.pageSizeOptions" (page)="onPaginateChange($event)"></mat-paginator>
+
+  </mat-card-actions>
+</mat-card>

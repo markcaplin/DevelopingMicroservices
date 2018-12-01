@@ -1,0 +1,84 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+
+    <mat-toolbar color="primary">
+      <div [hidden]="!isAuthenicated">
+        <button mat-icon-button (click)="toggleNavBar()">
+          <mat-icon>apps</mat-icon>
+        </button>
+      </div>
+      <h1 class="example-app-name">Micro Services, Inc.</h1>
+
+      <span class="spacer"></span>
+      <span [hidden]="!isAuthenicated" class="mat-body">
+       
+      </span>
+      <span class="spacer"></span>
+
+      <span [hidden]="isAuthenicated" class="mat-body">
+        <a mat-list-item [routerLink]="['/accountmanagement/account-register']">
+          <mat-icon class="icon">input</mat-icon>
+          <span class="label" style="padding-right:20px">Register</span>
+        </a>
+      </span>
+      <span [hidden]="isAuthenicated" class="mat-body">
+        <a mat-list-item [routerLink]="['/accountmanagement/account-login']">
+          <mat-icon class="icon">input</mat-icon>
+          <span class="label">Login</span>
+        </a>
+      </span>
+
+      <span [hidden]="!isAuthenicated" class="mat-body" style="padding-right: 10px">
+        <a mat-list-item [routerLink]="['/accountmanagement/user-profile']">{{firstName}}&nbsp;{{lastName}}&nbsp; </a>
+      </span>
+
+      <span [hidden]="!isAuthenicated" class="mat-body">
+        <a mat-list-item style="cursor:pointer" (click)="logout()">Logout</a>
+      </span>
+
+
+
+    </mat-toolbar>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div [hidden]="hideMenuBar || !isAuthenicated">
+  <mat-toolbar color="accent">
+
+    <div style="margin-right:20px;">
+      <a mat-list-item [routerLink]="['/inventorymanagement/product-inquiry']">
+        <mat-icon class="icon">dashboard</mat-icon>
+        <span class="label">Inventory Management</span>
+      </a>
+    </div>
+
+    <div style="margin-right:20px;">
+      <a mat-list-item [routerLink]="['salesordermanagement/customer-inquiry']">
+        <mat-icon class="icon">dashboard</mat-icon>
+        <span class="label">Sales Order Management</span>
+      </a>
+    </div>
+
+    <div style="margin-right:20px;">
+      <a mat-list-item [routerLink]="['purchaseordermanagement/supplier-inquiry']">
+        <mat-icon class="icon">dashboard</mat-icon>
+        <span class="label">Purchase Order Management</span>
+      </a>
+    </div>
+
+  </mat-toolbar>
+</div>
+
+<div [hidden]="!showProgressBar" style="width: 100px; z-index:1000; height:25px; position: fixed; bottom:12%; right:1%; margin: -100px 0 0 -150px;">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div [hidden]="!hideMenuBar" style="margin:0px;margin-top:0px;">
+  <router-outlet></router-outlet>
+</div>
+
+
+<div style="width:100%; text-align:center" [hidden]="hideMenuBar">
+  <img src="../assets/homepage.png" />
+</div>
+

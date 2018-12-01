@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Interfaces\CodeProject.Shared.Common.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Models\CodeProject.Shared.Common.Models.csproj" />
+    <ProjectReference Include="..\CodeProject.AccountManagement.Data.Models\CodeProject.AccountManagement.Data.Models.csproj" />
+  </ItemGroup>
+
+</Project>

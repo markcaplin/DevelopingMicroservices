@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeProject.PurchaseOrderManagement.Data.EntityFramework", "CodeProject.PurchaseOrderManagement.Data.EntityFramework\CodeProject.PurchaseOrderManagement.Data.EntityFramework.csproj", "{703EBA5B-E8B4-46DF-B1D5-C83695E7EEED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{703EBA5B-E8B4-46DF-B1D5-C83695E7EEED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703EBA5B-E8B4-46DF-B1D5-C83695E7EEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703EBA5B-E8B4-46DF-B1D5-C83695E7EEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703EBA5B-E8B4-46DF-B1D5-C83695E7EEED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF97AB6B-FFB5-435D-B2E5-D9371E96008E}
+	EndGlobalSection
+EndGlobal

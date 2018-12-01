@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.InventoryManagement.WebApi", "CodeProject.InventoryManagement.WebApi\CodeProject.InventoryManagement.WebApi.csproj", "{715DC404-2820-4AC6-BA02-7BE1DDC43907}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.InventoryManagement.BusinessRules", "CodeProject.InventoryManagement.BusinessRules\CodeProject.InventoryManagement.BusinessRules.csproj", "{5525D683-7B80-497E-9943-290A8E642E84}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.InventoryManagement.BusinessServices", "CodeProject.InventoryManagement.BusinessServices\CodeProject.InventoryManagement.BusinessServices.csproj", "{D46DCE9C-7E5E-4A77-B11F-7C06288291CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.InventoryManagement.Data.EntityFramework", "CodeProject.InventoryManagement.Data.EntityFramework\CodeProject.InventoryManagement.Data.EntityFramework.csproj", "{D4C8B6C6-C28D-4DA0-AEE1-B73CA3760F7B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.InventoryManagement.Data.Models", "CodeProject.InventoryManagement.Data.Models\CodeProject.InventoryManagement.Data.Models.csproj", "{B977CFA7-CE9A-4B5A-BA4E-1929249DA0E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.InventoryManagement.Interfaces", "CodeProject.InventoryManagement.Interfaces\CodeProject.InventoryManagement.Interfaces.csproj", "{23B42868-E9EA-49AE-8E74-A806638B262D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Interfaces", "..\Shared\CodeProject.Shared.Common.Interfaces\CodeProject.Shared.Common.Interfaces.csproj", "{A5567A4C-156F-440A-B12E-3C59865A9350}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Models", "..\Shared\CodeProject.Shared.Common.Models\CodeProject.Shared.Common.Models.csproj", "{187CEC92-BF47-4011-A878-8CA1BF9421ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Utilities", "..\Shared\CodeProject.Shared.Common.Utilites\CodeProject.Shared.Common.Utilities.csproj", "{A11DEACC-13A1-463A-9CA7-3DAD67B3575B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{715DC404-2820-4AC6-BA02-7BE1DDC43907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{715DC404-2820-4AC6-BA02-7BE1DDC43907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{715DC404-2820-4AC6-BA02-7BE1DDC43907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{715DC404-2820-4AC6-BA02-7BE1DDC43907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5525D683-7B80-497E-9943-290A8E642E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5525D683-7B80-497E-9943-290A8E642E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5525D683-7B80-497E-9943-290A8E642E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5525D683-7B80-497E-9943-290A8E642E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D46DCE9C-7E5E-4A77-B11F-7C06288291CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46DCE9C-7E5E-4A77-B11F-7C06288291CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46DCE9C-7E5E-4A77-B11F-7C06288291CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46DCE9C-7E5E-4A77-B11F-7C06288291CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C8B6C6-C28D-4DA0-AEE1-B73CA3760F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C8B6C6-C28D-4DA0-AEE1-B73CA3760F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C8B6C6-C28D-4DA0-AEE1-B73CA3760F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C8B6C6-C28D-4DA0-AEE1-B73CA3760F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B977CFA7-CE9A-4B5A-BA4E-1929249DA0E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B977CFA7-CE9A-4B5A-BA4E-1929249DA0E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B977CFA7-CE9A-4B5A-BA4E-1929249DA0E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B977CFA7-CE9A-4B5A-BA4E-1929249DA0E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B42868-E9EA-49AE-8E74-A806638B262D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B42868-E9EA-49AE-8E74-A806638B262D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B42868-E9EA-49AE-8E74-A806638B262D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B42868-E9EA-49AE-8E74-A806638B262D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5567A4C-156F-440A-B12E-3C59865A9350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5567A4C-156F-440A-B12E-3C59865A9350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5567A4C-156F-440A-B12E-3C59865A9350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5567A4C-156F-440A-B12E-3C59865A9350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{187CEC92-BF47-4011-A878-8CA1BF9421ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{187CEC92-BF47-4011-A878-8CA1BF9421ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{187CEC92-BF47-4011-A878-8CA1BF9421ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{187CEC92-BF47-4011-A878-8CA1BF9421ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A11DEACC-13A1-463A-9CA7-3DAD67B3575B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A11DEACC-13A1-463A-9CA7-3DAD67B3575B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A11DEACC-13A1-463A-9CA7-3DAD67B3575B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A11DEACC-13A1-463A-9CA7-3DAD67B3575B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15187309-82AC-44BC-A93D-B3EA78C2BDBA}
+	EndGlobalSection
+EndGlobal

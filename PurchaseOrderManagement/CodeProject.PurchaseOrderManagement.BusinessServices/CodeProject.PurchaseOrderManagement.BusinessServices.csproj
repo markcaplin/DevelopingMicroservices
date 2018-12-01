@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Interfaces\CodeProject.Shared.Common.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Models\CodeProject.Shared.Common.Models.csproj" />
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Utilites\CodeProject.Shared.Common.Utilities.csproj" />
+    <ProjectReference Include="..\CodeProject.PurchaseOrderManagement.BusinessRules\CodeProject.PurchaseOrderManagement.BusinessRules.csproj" />
+    <ProjectReference Include="..\CodeProject.PurchaseOrderManagement.Data.Models\CodeProject.PurchaseOrderManagement.Data.Models.csproj" />
+    <ProjectReference Include="..\CodeProject.PurchaseOrderManagement.Interfaces\CodeProject.PurchaseOrderManagement.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

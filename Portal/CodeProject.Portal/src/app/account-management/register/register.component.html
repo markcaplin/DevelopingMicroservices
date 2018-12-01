@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Register</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="EmailAddress" value="{{userViewModel.emailAddress}}" [(ngModel)]="userViewModel.emailAddress" placeholder="Email Address">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="FirstName" placeholder="First Name" value="{{userViewModel.firstName}}" [(ngModel)]="userViewModel.firstName">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="LastName" placeholder="Last Name" value="{{userViewModel.lastName}}" [(ngModel)]="userViewModel.lastName">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="CompanyName" placeholder="Company Name" value="{{userViewModel.companyName}}" [(ngModel)]="userViewModel.companyName">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput  type="password"  name="Password" placeholder="Password" value="{{userViewModel.password}}" [(ngModel)]="userViewModel.password">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput type="password" name="PasswordConfirmation" placeholder="Confirm Password" value="{{userViewModel.passwordConfirmation}}" [(ngModel)]="userViewModel.passwordConfirmation">
+        </mat-form-field>
+      </div>
+
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="primary" (click)="register()">Register</button>
+  </mat-card-actions>
+</mat-card>

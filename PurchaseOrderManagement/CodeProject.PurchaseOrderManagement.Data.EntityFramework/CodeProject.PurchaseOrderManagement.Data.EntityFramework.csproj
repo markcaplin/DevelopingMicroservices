@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.2" />
+    <PackageReference Include="System.Linq.Dynamic" Version="1.0.7" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.8.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Interfaces\CodeProject.Shared.Common.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Models\CodeProject.Shared.Common.Models.csproj" />
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Utilites\CodeProject.Shared.Common.Utilities.csproj" />
+    <ProjectReference Include="..\CodeProject.PurchaseOrderManagement.Data.Models\CodeProject.PurchaseOrderManagement.Data.Models.csproj" />
+    <ProjectReference Include="..\CodeProject.PurchaseOrderManagement.Interfaces\CodeProject.PurchaseOrderManagement.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

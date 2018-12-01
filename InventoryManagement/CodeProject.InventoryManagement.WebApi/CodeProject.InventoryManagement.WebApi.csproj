@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Interfaces\CodeProject.Shared.Common.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Models\CodeProject.Shared.Common.Models.csproj" />
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Utilites\CodeProject.Shared.Common.Utilities.csproj" />
+    <ProjectReference Include="..\CodeProject.InventoryManagement.BusinessRules\CodeProject.InventoryManagement.BusinessRules.csproj" />
+    <ProjectReference Include="..\CodeProject.InventoryManagement.BusinessServices\CodeProject.InventoryManagement.BusinessServices.csproj" />
+    <ProjectReference Include="..\CodeProject.InventoryManagement.Data.EntityFramework\CodeProject.InventoryManagement.Data.EntityFramework.csproj" />
+    <ProjectReference Include="..\CodeProject.InventoryManagement.Data.Models\CodeProject.InventoryManagement.Data.Models.csproj" />
+    <ProjectReference Include="..\CodeProject.InventoryManagement.Interfaces\CodeProject.InventoryManagement.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

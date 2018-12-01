@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.WebApi", "CodeProject.SalesOrderManagement.WebApi\CodeProject.SalesOrderManagement.WebApi.csproj", "{DD4A5687-F7B8-4F1C-A3F9-AB7B05D4842E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.BusinessRules", "CodeProject.SalesOrderManagement.BusinessRules\CodeProject.SalesOrderManagement.BusinessRules.csproj", "{20C3FF73-91EA-465C-9843-FF9881467DBB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.BusinessServices", "CodeProject.SalesOrderManagement.BusinessServices\CodeProject.SalesOrderManagement.BusinessServices.csproj", "{4C6511E0-95B6-44BE-A612-E564F1549731}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.Data.EntityFramework", "CodeProject.SalesOrderManagement.Data.EntityFramework\CodeProject.SalesOrderManagement.Data.EntityFramework.csproj", "{BA2D44ED-0A85-484F-8D6A-679209F69E44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.Data.Models", "CodeProject.SalesOrderManagement.Data.Models\CodeProject.SalesOrderManagement.Data.Models.csproj", "{79CA17F0-4088-4691-8956-8FF1669062DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.Interfaces", "CodeProject.SalesOrderManagement.Interfaces\CodeProject.SalesOrderManagement.Interfaces.csproj", "{346133C8-E355-40FB-9C1E-835E761E96D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Utilities", "..\Shared\CodeProject.Shared.Common.Utilites\CodeProject.Shared.Common.Utilities.csproj", "{29868650-FA10-44BF-9FE5-8C0A737F322A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Models", "..\Shared\CodeProject.Shared.Common.Models\CodeProject.Shared.Common.Models.csproj", "{9935D818-EBF1-402E-8ABC-6115F65E22E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Interfaces", "..\Shared\CodeProject.Shared.Common.Interfaces\CodeProject.Shared.Common.Interfaces.csproj", "{73CA4FCD-BDBA-4FE2-89E8-04D5DFA2FA66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD4A5687-F7B8-4F1C-A3F9-AB7B05D4842E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD4A5687-F7B8-4F1C-A3F9-AB7B05D4842E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD4A5687-F7B8-4F1C-A3F9-AB7B05D4842E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD4A5687-F7B8-4F1C-A3F9-AB7B05D4842E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C3FF73-91EA-465C-9843-FF9881467DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C3FF73-91EA-465C-9843-FF9881467DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C3FF73-91EA-465C-9843-FF9881467DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C3FF73-91EA-465C-9843-FF9881467DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6511E0-95B6-44BE-A612-E564F1549731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6511E0-95B6-44BE-A612-E564F1549731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6511E0-95B6-44BE-A612-E564F1549731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6511E0-95B6-44BE-A612-E564F1549731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA2D44ED-0A85-484F-8D6A-679209F69E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA2D44ED-0A85-484F-8D6A-679209F69E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA2D44ED-0A85-484F-8D6A-679209F69E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA2D44ED-0A85-484F-8D6A-679209F69E44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CA17F0-4088-4691-8956-8FF1669062DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CA17F0-4088-4691-8956-8FF1669062DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CA17F0-4088-4691-8956-8FF1669062DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CA17F0-4088-4691-8956-8FF1669062DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346133C8-E355-40FB-9C1E-835E761E96D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346133C8-E355-40FB-9C1E-835E761E96D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346133C8-E355-40FB-9C1E-835E761E96D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346133C8-E355-40FB-9C1E-835E761E96D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29868650-FA10-44BF-9FE5-8C0A737F322A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29868650-FA10-44BF-9FE5-8C0A737F322A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29868650-FA10-44BF-9FE5-8C0A737F322A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29868650-FA10-44BF-9FE5-8C0A737F322A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9935D818-EBF1-402E-8ABC-6115F65E22E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9935D818-EBF1-402E-8ABC-6115F65E22E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9935D818-EBF1-402E-8ABC-6115F65E22E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9935D818-EBF1-402E-8ABC-6115F65E22E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73CA4FCD-BDBA-4FE2-89E8-04D5DFA2FA66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73CA4FCD-BDBA-4FE2-89E8-04D5DFA2FA66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73CA4FCD-BDBA-4FE2-89E8-04D5DFA2FA66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73CA4FCD-BDBA-4FE2-89E8-04D5DFA2FA66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09BFAE30-3339-4F3A-A791-E592A676F823}
+	EndGlobalSection
+EndGlobal

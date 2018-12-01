@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CodeProject.InventoryManagement.MessageQueueing": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="src\app\material-design\**" />
+    <Content Remove="src\app\material-design\**" />
+    <EmbeddedResource Remove="src\app\material-design\**" />
+    <None Remove="src\app\material-design\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="src\app\account-management\" />
+    <Folder Include="src\app\inventory-management\" />
+    <Folder Include="src\app\home-directory\" />
+    <Folder Include="src\app\shared-components-services\" />
+    <Folder Include="src\app\sales-order-management\" />
+    <Folder Include="src\app\purchase-order-management\" />
+  </ItemGroup>
+
+</Project>

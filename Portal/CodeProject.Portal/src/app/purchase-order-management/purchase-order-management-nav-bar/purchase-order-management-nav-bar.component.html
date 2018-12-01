@@ -1,0 +1,33 @@
+<mat-toolbar style="background-color:tomato">
+
+  <div>
+    <a mat-list-item>
+      <mat-icon class="icon">dashboard</mat-icon>
+      <span class="label">Purchase Order Management</span>
+    </a>
+  </div>
+
+  <span class="spacer"></span>
+
+  <div style="margin-right:20px;" class="mat-body">
+    <a mat-list-item [routerLink]="['/purchaseordermanagement/supplier-maintenance']">
+      <mat-icon class="icon">dashboard</mat-icon>
+      <span class="label">Supplier Maintenance</span>
+    </a>
+  </div>
+
+  <div style="margin-right:20px;" class="mat-body">
+    <a mat-list-item [routerLink]="['/purchaseordermanagement/supplier-inquiry']">
+      <mat-icon class="icon">dashboard</mat-icon>
+      <span class="label">Supplier Inquiry</span>
+    </a>
+  </div>
+
+  <div style="margin-right:20px;" class="mat-body">
+    <a mat-list-item [routerLink]="['/purchaseordermanagement/purchase-order-inquiry']">
+      <mat-icon class="icon">dashboard</mat-icon>
+      <span class="label">Purchase Order Inquiry</span>
+    </a>
+  </div>
+
+</mat-toolbar>

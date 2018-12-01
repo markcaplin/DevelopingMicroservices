@@ -1,0 +1,34 @@
+<section>
+  
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Login</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+  
+      <form>
+  
+        <div>
+          <mat-form-field >
+            <input matInput type="email" name="EmailAddress" value="{{userViewModel.emailAddress}}" [(ngModel)]="userViewModel.emailAddress" placeholder="Email Address">
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <mat-form-field>
+            <input matInput  type="password"  name="Password" placeholder="Password" value="{{userViewModel.password}}" [(ngModel)]="userViewModel.password">
+          </mat-form-field>
+        </div>
+  
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" (click)="login()">Login</button>
+    </mat-card-actions>
+  </mat-card>
+
+</section>
+
+

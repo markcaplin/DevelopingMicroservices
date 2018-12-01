@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.MessageQueueing", "CodeProject.SalesOrderManagement.MessageQueueing\CodeProject.SalesOrderManagement.MessageQueueing.csproj", "{38686441-BE93-4D4E-86C8-898CE46166D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.Data.EntityFramework", "CodeProject.SalesOrderManagement.Data.EntityFramework\CodeProject.SalesOrderManagement.Data.EntityFramework.csproj", "{DA7E21BE-C3BE-4A38-AD56-945244C7C3E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.Data.Models", "CodeProject.SalesOrderManagement.Data.Models\CodeProject.SalesOrderManagement.Data.Models.csproj", "{76F9C046-46E0-45D5-84E6-8271BC4C157D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.Interfaces", "CodeProject.SalesOrderManagement.Interfaces\CodeProject.SalesOrderManagement.Interfaces.csproj", "{A0D7457B-5C4F-4E7B-8870-1446B8FDFFA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.MessageQueueing", "..\MessageQueueing\CodeProject.MessageQueueing\CodeProject.MessageQueueing.csproj", "{FE8D5CB0-B252-4B2F-894A-8E78EDCF09B3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Interfaces", "..\Shared\CodeProject.Shared.Common.Interfaces\CodeProject.Shared.Common.Interfaces.csproj", "{EC8502F9-77A5-4BBF-941F-FE9DFC24A70B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Utilities", "..\Shared\CodeProject.Shared.Common.Utilites\CodeProject.Shared.Common.Utilities.csproj", "{4DCA9D2D-7D34-4491-8FCB-EFBBB5D07F7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Models", "..\Shared\CodeProject.Shared.Common.Models\CodeProject.Shared.Common.Models.csproj", "{2FE15ADF-E761-4AF9-AEFF-EC10792ED438}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.SalesOrderManagement.BusinessRules", "CodeProject.SalesOrderManagement.BusinessRules\CodeProject.SalesOrderManagement.BusinessRules.csproj", "{22B905E5-375D-44E1-9B9E-262289CABCBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38686441-BE93-4D4E-86C8-898CE46166D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38686441-BE93-4D4E-86C8-898CE46166D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38686441-BE93-4D4E-86C8-898CE46166D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38686441-BE93-4D4E-86C8-898CE46166D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA7E21BE-C3BE-4A38-AD56-945244C7C3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7E21BE-C3BE-4A38-AD56-945244C7C3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7E21BE-C3BE-4A38-AD56-945244C7C3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA7E21BE-C3BE-4A38-AD56-945244C7C3E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F9C046-46E0-45D5-84E6-8271BC4C157D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F9C046-46E0-45D5-84E6-8271BC4C157D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F9C046-46E0-45D5-84E6-8271BC4C157D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F9C046-46E0-45D5-84E6-8271BC4C157D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D7457B-5C4F-4E7B-8870-1446B8FDFFA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D7457B-5C4F-4E7B-8870-1446B8FDFFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D7457B-5C4F-4E7B-8870-1446B8FDFFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D7457B-5C4F-4E7B-8870-1446B8FDFFA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8D5CB0-B252-4B2F-894A-8E78EDCF09B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8D5CB0-B252-4B2F-894A-8E78EDCF09B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8D5CB0-B252-4B2F-894A-8E78EDCF09B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8D5CB0-B252-4B2F-894A-8E78EDCF09B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8502F9-77A5-4BBF-941F-FE9DFC24A70B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8502F9-77A5-4BBF-941F-FE9DFC24A70B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC8502F9-77A5-4BBF-941F-FE9DFC24A70B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC8502F9-77A5-4BBF-941F-FE9DFC24A70B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DCA9D2D-7D34-4491-8FCB-EFBBB5D07F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DCA9D2D-7D34-4491-8FCB-EFBBB5D07F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DCA9D2D-7D34-4491-8FCB-EFBBB5D07F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DCA9D2D-7D34-4491-8FCB-EFBBB5D07F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FE15ADF-E761-4AF9-AEFF-EC10792ED438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE15ADF-E761-4AF9-AEFF-EC10792ED438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE15ADF-E761-4AF9-AEFF-EC10792ED438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE15ADF-E761-4AF9-AEFF-EC10792ED438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B905E5-375D-44E1-9B9E-262289CABCBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B905E5-375D-44E1-9B9E-262289CABCBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B905E5-375D-44E1-9B9E-262289CABCBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B905E5-375D-44E1-9B9E-262289CABCBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B680D2B1-E89A-4E3D-8968-34D1B14B1A81}
+	EndGlobalSection
+EndGlobal

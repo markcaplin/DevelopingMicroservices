@@ -1,0 +1,160 @@
+<app-purchase-order-management-nav-bar></app-purchase-order-management-nav-bar>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Purchase Order Entry</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input [disabled]="true" matInput name="PurchaseOrderNumber" value="{{purchaseOrderViewModel.purchaseOrderNumber}}"
+            [(ngModel)]="purchaseOrderViewModel.purchaseOrderNumber" placeholder="Purchase Order #">
+        </mat-form-field>
+
+        <mat-form-field style="width:300px">
+          <input [disabled]="true" type="date" matInput name="OrderDate" value="{{purchaseOrderViewModel.orderDate}}"
+            [(ngModel)]="purchaseOrderViewModel.orderDate" placeholder="Order Date">
+        </mat-form-field>
+
+        <mat-form-field style="width:300px">
+          <input [disabled]="true" matInput name="PurchaseOrderStatusDescription" value="{{purchaseOrderViewModel.purchaseOrderStatusDescription}}"
+            [(ngModel)]="purchaseOrderViewModel.purchaseOrderStatusDescription" placeholder="Status">
+        </mat-form-field>
+
+        <mat-form-field style="width:300px">
+            <input [disabled]="true" matInput name="PurchaseOrderTotal" value="{{purchaseOrderViewModel.orderTotalFormatted}}"
+              [(ngModel)]="purchaseOrderViewModel.orderTotalFormatted" placeholder="Order Total">
+          </mat-form-field>
+
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input [disabled]="true" matInput name="SupplierName" value="{{purchaseOrderViewModel.supplierName}}"
+            [(ngModel)]="purchaseOrderViewModel.supplierName" placeholder="Supplier Name">
+        </mat-form-field>
+
+        <mat-form-field style="width:300px">
+          <input [disabled]="true" matInput name="AddressLine1" value="{{purchaseOrderViewModel.addressLine1}}"
+            [(ngModel)]="purchaseOrderViewModel.addressLine1" placeholder="Address">
+        </mat-form-field>
+
+        <mat-form-field style="width:300px">
+          <input [disabled]="true" matInput name="AddressLine2" value="{{purchaseOrderViewModel.addressLine2}}"
+            [(ngModel)]="purchaseOrderViewModel.addressLine2" placeholder="Address">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input [disabled]="true" matInput name="City" value="{{purchaseOrderViewModel.city}}" [(ngModel)]="purchaseOrderViewModel.city"
+            placeholder="City">
+        </mat-form-field>
+
+        <mat-form-field style="width:300px">
+          <input [disabled]="true" matInput name="Region" value="{{purchaseOrderViewModel.region}}" [(ngModel)]="purchaseOrderViewModel.region"
+            placeholder="State/Region">
+        </mat-form-field>
+
+        <mat-form-field style="width:300px">
+          <input [disabled]="true" matInput name="PostalCode" value="{{purchaseOrderViewModel.postalCode}}" [(ngModel)]="purchaseOrderViewModel.postalCode"
+            placeholder="Postal Code">
+        </mat-form-field>
+      </div>
+
+      <div style="margin-top:10px; margin-bottom:20px">
+        Purchase Order Details
+      </div>
+
+      <table #table mat-table [dataSource]="detailDataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="productNumber">
+          <th mat-header-cell *matHeaderCellDef> Product Number</th>
+          <td mat-cell *matCellDef="let element;  let i = index;">
+            <mat-form-field style="width:250px !important">
+              <input tabindex="1" required [disabled]="!element.editProductNumber" (blur)="getProduct()" matInput name="ProductNumberGrid{{i}}"
+                [value]="element.productNumber" [(ngModel)]="element.productNumber">
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Description</th>
+          <td mat-cell *matCellDef="let element;  let i = index;">
+            <mat-form-field style="width:250px !important">
+              <input [disabled]="true" matInput name="DescriptionGrid{{i}}" [value]="element.productDescription">
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="unitPrice">
+          <th mat-header-cell *matHeaderCellDef> Unit Price</th>
+          <td mat-cell *matCellDef="let element; let i = index;">
+            <mat-form-field style="width:100px !important">
+              <input tabindex="2" type="number" required [disabled]="!element.editUnitPrice" matInput name="UnitPriceGrid{{i}}" [value]="element.unitPriceFormatted"
+                [(ngModel)]="element.unitPriceFormatted">
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderQuantity">
+          <th mat-header-cell *matHeaderCellDef> Order Quantity</th>
+          <td mat-cell *matCellDef="let element; let i = index;">
+            <mat-form-field style="width:100px !important">
+              <input tabindex="3" type="number" required [disabled]="!element.editQuantity" matInput name="OrderQuantityGrid{{i}}" [value]="element.orderQuantityFormatted"
+                [(ngModel)]="element.orderQuantityFormatted">
+
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let element; let i = index;">
+
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item [disabled]="element.disableAddButton" (click)="addLineItem()">
+                <mat-icon>add</mat-icon>
+                <span>Add</span>
+              </button>
+              <button mat-menu-item [disabled]="element.disableEditButton" (click)="editLineItem(i)">
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item [disabled]="element.disableCancelButton" (click)="cancelEdit(i)">
+                <mat-icon>undo</mat-icon>
+                <span>Cancel</span>
+              </button>
+              <button mat-menu-item [disabled]="element.disableSaveButton" (click)="updateLineItem(i)">
+                <mat-icon>save</mat-icon>
+                <span>Save</span>
+              </button>
+              <button mat-menu-item [disabled]="element.disableDeleteButton"  (click)="deleteLineItemDialog(i)">
+                <mat-icon>remove</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="purchaseOrderViewModel.displayedColumns"></tr>
+        <tr style="cursor: pointer;" mat-row *matRowDef="let row; columns: purchaseOrderViewModel.displayedColumns; let i = index"></tr>
+
+      </table>
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+      <button [disabled]="disableSubmitButton" mat-flat-button color="primary"
+      (click)="submitPurchaseOrderDialog()">Submit Purchase Order</button>&nbsp;
+  </mat-card-actions>
+</mat-card>

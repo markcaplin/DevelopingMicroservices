@@ -1,0 +1,33 @@
+<mat-toolbar style="background-color:green">
+
+  <div>
+    <a mat-list-item>
+      <mat-icon class="icon">dashboard</mat-icon>
+      <span class="label">Sales Order Management</span>
+    </a>
+  </div>
+
+  <span class="spacer"></span>
+
+  <div style="margin-right:20px;" class="mat-body">
+    <a mat-list-item [routerLink]="['/salesordermanagement/customer-maintenance']">
+      <mat-icon class="icon">dashboard</mat-icon>
+      <span class="label">Customer Maintenance</span>
+    </a>
+  </div>
+
+  <div style="margin-right:20px;" class="mat-body">
+    <a mat-list-item [routerLink]="['/salesordermanagement/customer-inquiry']">
+      <mat-icon class="icon">dashboard</mat-icon>
+      <span class="label">Customer Inquiry</span>
+    </a>
+  </div>
+
+  <div style="margin-right:20px;" class="mat-body">
+    <a mat-list-item [routerLink]="['/salesordermanagement/sales-order-inquiry']">
+      <mat-icon class="icon">dashboard</mat-icon>
+      <span class="label">Sales Order Inquiry</span>
+    </a>
+  </div>
+
+</mat-toolbar>

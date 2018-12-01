@@ -1,0 +1,58 @@
+<app-inventory-management-nav-bar></app-inventory-management-nav-bar>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Product Inquiry</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form #form="ngForm">
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="Name" #searchField value="{{productInquiryViewModel.productNumber}}" [(ngModel)]="productInquiryViewModel.productNumber"
+            placeholder="Product">
+        </mat-form-field>
+        &nbsp;
+        <button mat-flat-button color="primary" (click)="resetSearch()">Reset</button>&nbsp;
+      </div>
+
+    </form>
+
+    <mat-paginator [length]="productInquiryViewModel.totalProducts" [showFirstLastButtons]="true"
+      [pageIndex]="productInquiryViewModel.currentPageIndex" [pageSize]="productInquiryViewModel.pageSize"
+      [pageSizeOptions]="productInquiryViewModel.pageSizeOptions" (page)="onPaginateChange($event)"></mat-paginator>
+
+    <table mat-table [dataSource]="productInquiryViewModel.products" matSort (matSortChange)="sortData($event)"
+      class="mat-elevation-z8">
+
+      <ng-container matColumnDef="productNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="ProductNumber"> Product #</th>
+        <td mat-cell *matCellDef="let element"> {{element.productNumber}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="Description">Product Description</th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="unitPrice">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="UnitPrice">Unit Price</th>
+        <td mat-cell *matCellDef="let element"> {{element.unitPrice | currency}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="productInquiryViewModel.displayedColumns"></tr>
+      <tr style="cursor: pointer;" mat-row *matRowDef="let row; columns: productInquiryViewModel.displayedColumns; let i = index"
+        (click)="selectProduct(i)"></tr>
+
+    </table>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <mat-paginator [length]="productInquiryViewModel.totalProducts" [showFirstLastButtons]="true"
+      [pageSize]="productInquiryViewModel.pageSize" [pageIndex]="productInquiryViewModel.currentPageIndex"
+      [pageSizeOptions]="productInquiryViewModel.pageSizeOptions" (page)="onPaginateChange($event)"></mat-paginator>
+  </mat-card-actions>
+</mat-card>

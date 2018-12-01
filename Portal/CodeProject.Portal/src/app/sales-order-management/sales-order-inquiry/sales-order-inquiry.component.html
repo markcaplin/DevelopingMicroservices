@@ -1,0 +1,82 @@
+
+<app-sales-order-management-nav-bar></app-sales-order-management-nav-bar>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Sales Order Inquiry</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form #form="ngForm">
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="Name" #searchField value="{{salesOrderInquiryViewModel.customerName}}" [(ngModel)]="salesOrderInquiryViewModel.customerName"
+            placeholder="Customer Name">
+        </mat-form-field>
+        &nbsp;
+        <button mat-flat-button color="primary" (click)="resetSearch()">Reset</button>&nbsp;
+      </div>
+
+    </form>
+
+    <mat-paginator [length]="salesOrderInquiryViewModel.totalSalesOrders" [showFirstLastButtons]="true"
+      [pageIndex]="salesOrderInquiryViewModel.currentPageIndex" [pageSize]="salesOrderInquiryViewModel.pageSize"
+      [pageSizeOptions]="salesOrderInquiryViewModel.pageSizeOptions" (page)="onPaginateChange($event)"></mat-paginator>
+
+    <table mat-table [dataSource]="salesOrderInquiryViewModel.salesOrders" matSort (matSortChange)="sortData($event)"
+      class="mat-elevation-z8">
+
+      <ng-container matColumnDef="salesOrderNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="SalesOrderNumber"> PO Number</th>
+        <td mat-cell *matCellDef="let element"> {{element.salesOrderNumber}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="customerName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="Customer.Name"> Customer Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.customerName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="Customer.City"> City </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="region">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="Customer.Region"> State </th>
+        <td mat-cell *matCellDef="let element"> {{element.region}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="orderTotal">
+          <th mat-header-cell *matHeaderCellDef  mat-sort-header="OrderTotal">Order Total</th>
+          <td mat-cell *matCellDef="let element"> {{element.orderTotal | currency}} </td>
+        </ng-container>
+
+      <ng-container matColumnDef="orderDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="DateCreated"> Order Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.orderDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="salesOrderStatusDescription">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="SalesOrderStatus.Description">Status</th>
+        <td mat-cell *matCellDef="let element"> {{element.salesOrderStatusDescription}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="salesOrderInquiryViewModel.displayedColumns"></tr>
+      <tr style="cursor: pointer;" mat-row *matRowDef="let row; columns: salesOrderInquiryViewModel.displayedColumns; let i = index"
+        (click)="selectSalesOrder(i)"></tr>
+
+    </table>
+
+  </mat-card-content>
+  <mat-card-actions>
+
+
+    <mat-paginator [length]="salesOrderInquiryViewModel.totalSalesOrders" [showFirstLastButtons]="true"
+      [pageSize]="salesOrderInquiryViewModel.pageSize" [pageIndex]="salesOrderInquiryViewModel.currentPageIndex"
+      [pageSizeOptions]="salesOrderInquiryViewModel.pageSizeOptions" (page)="onPaginateChange($event)"></mat-paginator>
+
+  </mat-card-actions>
+</mat-card>

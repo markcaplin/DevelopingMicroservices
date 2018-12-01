@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeProject.AccountManagement.Interfaces", "CodeProject.AccountManagement.Interfaces\CodeProject.AccountManagement.Interfaces.csproj", "{98EE51C5-140B-47F2-B5F5-60D8B539A511}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98EE51C5-140B-47F2-B5F5-60D8B539A511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98EE51C5-140B-47F2-B5F5-60D8B539A511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98EE51C5-140B-47F2-B5F5-60D8B539A511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98EE51C5-140B-47F2-B5F5-60D8B539A511}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D9F2129-5D3E-4DC0-84B7-3DC12C054A3D}
+	EndGlobalSection
+EndGlobal

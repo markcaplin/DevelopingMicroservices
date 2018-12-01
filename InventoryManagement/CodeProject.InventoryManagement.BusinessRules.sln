@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeProject.InventoryManagement.BusinessRules", "CodeProject.InventoryManagement.BusinessRules\CodeProject.InventoryManagement.BusinessRules.csproj", "{D07D4DD4-58E4-4204-91AA-ED050BFD213B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D07D4DD4-58E4-4204-91AA-ED050BFD213B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D07D4DD4-58E4-4204-91AA-ED050BFD213B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D07D4DD4-58E4-4204-91AA-ED050BFD213B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07D4DD4-58E4-4204-91AA-ED050BFD213B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70AA5AE2-B9C2-4B58-8162-C33533595DE1}
+	EndGlobalSection
+EndGlobal

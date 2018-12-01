@@ -1,0 +1,47 @@
+<app-inventory-management-nav-bar></app-inventory-management-nav-bar>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Product Maintenance</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="ProductNumber" value="{{productViewModel.productNumber}}" 
+          [(ngModel)]="productViewModel.productNumber" placeholder="Product Number">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="Description" placeholder="Description" 
+          value="{{productViewModel.description}}" [(ngModel)]="productViewModel.description">
+        </mat-form-field>
+      </div>
+
+    
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="BinLocation" placeholder="Bin Location" 
+          value="{{productViewModel.binLocation}}" [(ngModel)]="productViewModel.binLocation">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="UnitPrice" placeholder="Unit Price" value="{{productViewModel.unitPrice}}" 
+          [(ngModel)]="productViewModel.unitPrice">
+        </mat-form-field>
+      </div>
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="primary" (click)="createOrUpdateProduct()">Save Product</button>
+  </mat-card-actions>
+</mat-card>

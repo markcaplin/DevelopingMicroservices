@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeProject.LoggingManagement.Interfaces", "CodeProject.LoggingManagement.Interfaces\CodeProject.LoggingManagement.Interfaces.csproj", "{854F0A18-11F5-4E99-BA15-D33C9210484F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{854F0A18-11F5-4E99-BA15-D33C9210484F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{854F0A18-11F5-4E99-BA15-D33C9210484F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{854F0A18-11F5-4E99-BA15-D33C9210484F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{854F0A18-11F5-4E99-BA15-D33C9210484F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E989DA44-78C8-41B3-A5F1-231B491D9B68}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CodeProject.PurchaseOrderManagement.MessageQueueing": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

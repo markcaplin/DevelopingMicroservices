@@ -1,0 +1,65 @@
+
+<app-purchase-order-management-nav-bar></app-purchase-order-management-nav-bar>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Supplier Maintenance</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input [disabled]="readonlyMode" matInput name="SupplierName" value="{{supplierViewModel.supplierName}}" 
+          [(ngModel)]="supplierViewModel.supplierName" placeholder="Supplier Name">
+        </mat-form-field>
+      </div>
+
+      
+      <div>
+        <mat-form-field style="width:300px">
+          <input [disabled]="readonlyMode" matInput name="AddressLine1" value="{{supplierViewModel.AddressLine1}}" 
+          [(ngModel)]="supplierViewModel.addressLine1" placeholder="Address Line 1">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input [disabled]="readonlyMode" matInput name="AddressLine2" value="{{supplierViewModel.AddressLine2}}" 
+          [(ngModel)]="supplierViewModel.addressLine2" placeholder="Address Line 2">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input [disabled]="readonlyMode" matInput name="City" value="{{supplierViewModel.city}}" 
+          [(ngModel)]="supplierViewModel.city" placeholder="City">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input [disabled]="readonlyMode" matInput name="Region" value="{{supplierViewModel.region}}" 
+          [(ngModel)]="supplierViewModel.region" placeholder="State/Region">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width:300px">
+          <input [disabled]="readonlyMode" matInput name="PostalCode" value="{{supplierViewModel.postalCode}}" 
+          [(ngModel)]="supplierViewModel.postalCode" placeholder="Postal Code">
+        </mat-form-field>
+      </div>
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button [disabled]="readonlyMode==false" mat-flat-button color="primary" (click)="editSupplier()">Edit Supplier</button>&nbsp;
+    <button [disabled]="readonlyMode==true" mat-flat-button color="primary" (click)="createOrUpdateSupplier()">Save Supplier</button>&nbsp;
+    <button [disabled]="createMode==true" mat-flat-button color="primary"  (click)="createNewSupplier()">Create New Supplier</button>&nbsp;
+    <button [disabled]="createMode==true || readonlyMode==false" mat-flat-button color="primary" (click)="createPurchaseOrder()">Create Purchase Order</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="InventoryManagementBusinessService.cs~RF345ed55a.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeProject.InventoryManagement.BusinessRules\CodeProject.InventoryManagement.BusinessRules.csproj" />
+    <ProjectReference Include="..\CodeProject.InventoryManagement.Data.Models\CodeProject.InventoryManagement.Data.Models.csproj" />
+    <ProjectReference Include="..\CodeProject.InventoryManagement.Interfaces\CodeProject.InventoryManagement.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

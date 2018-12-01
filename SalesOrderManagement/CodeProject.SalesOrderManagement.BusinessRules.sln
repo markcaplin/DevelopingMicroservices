@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeProject.SalesOrderManagement.BusinessRules", "CodeProject.SalesOrderManagement.BusinessRules\CodeProject.SalesOrderManagement.BusinessRules.csproj", "{556F3BF8-7DBE-419F-8819-DC7EE2327DE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{556F3BF8-7DBE-419F-8819-DC7EE2327DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556F3BF8-7DBE-419F-8819-DC7EE2327DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556F3BF8-7DBE-419F-8819-DC7EE2327DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556F3BF8-7DBE-419F-8819-DC7EE2327DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C97DE25-47BF-4788-BFCA-B7550EFC9583}
+	EndGlobalSection
+EndGlobal

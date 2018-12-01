@@ -1,0 +1,21 @@
+<app-inventory-management-nav-bar></app-inventory-management-nav-bar>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Upload Product Master</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+
+    <label for="singleFile">Upload file</label>
+    <input id="singleFile" type="file" [fileUploadInputFor]="fileUploadQueue" />
+    <br>
+    &nbsp;&nbsp;
+    <mat-file-upload-queue #fileUploadQueue [httpRequestHeaders]="httpHeaders" [fileAlias]="'file'" [httpUrl]="uploadUrl">
+      <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+    </mat-file-upload-queue>
+  </mat-card-content>
+
+</mat-card>

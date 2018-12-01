@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.AccountManagement.WebApi", "CodeProject.AccountManagement.WebApi\CodeProject.AccountManagement.WebApi.csproj", "{19CB0DFB-AF51-485B-B90D-EFCB6F45C649}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.AccountManagement.BusinessRules", "CodeProject.AccountManagement.BusinessRules\CodeProject.AccountManagement.BusinessRules.csproj", "{2C068E1D-DC9B-4C69-83EF-7364563DC73C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.AccountManagement.BusinessServices", "CodeProject.AccountManagement.BusinessServices\CodeProject.AccountManagement.BusinessServices.csproj", "{B2F1DACE-7BC5-4071-8CBC-44F6E8419F57}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.AccountManagement.Data.EntityFramework", "CodeProject.AccountManagement.Data.EntityFramework\CodeProject.AccountManagement.Data.EntityFramework.csproj", "{505CA507-F79C-4D0F-A687-26C731CAC6CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.AccountManagement.Interfaces", "CodeProject.AccountManagement.Interfaces\CodeProject.AccountManagement.Interfaces.csproj", "{0EFBC16E-9307-466D-B2AB-5F077A67A3DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.AccountManagement.Data.Models", "CodeProject.AccountManagement.Data.Models\CodeProject.AccountManagement.Data.Models.csproj", "{7597852B-32E9-4EF3-A480-08254E1C09D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Models", "..\Shared\CodeProject.Shared.Common.Models\CodeProject.Shared.Common.Models.csproj", "{C4EA4E76-E063-4C67-85F4-43ABAD3FEB24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Interfaces", "..\Shared\CodeProject.Shared.Common.Interfaces\CodeProject.Shared.Common.Interfaces.csproj", "{4FA45EFF-A882-4A2E-B4B1-04CB72BDB16E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProject.Shared.Common.Utilities", "..\Shared\CodeProject.Shared.Common.Utilites\CodeProject.Shared.Common.Utilities.csproj", "{80F9B5A7-1E13-48AF-B035-68236F39C308}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19CB0DFB-AF51-485B-B90D-EFCB6F45C649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CB0DFB-AF51-485B-B90D-EFCB6F45C649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19CB0DFB-AF51-485B-B90D-EFCB6F45C649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19CB0DFB-AF51-485B-B90D-EFCB6F45C649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C068E1D-DC9B-4C69-83EF-7364563DC73C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C068E1D-DC9B-4C69-83EF-7364563DC73C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C068E1D-DC9B-4C69-83EF-7364563DC73C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C068E1D-DC9B-4C69-83EF-7364563DC73C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2F1DACE-7BC5-4071-8CBC-44F6E8419F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F1DACE-7BC5-4071-8CBC-44F6E8419F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F1DACE-7BC5-4071-8CBC-44F6E8419F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F1DACE-7BC5-4071-8CBC-44F6E8419F57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{505CA507-F79C-4D0F-A687-26C731CAC6CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{505CA507-F79C-4D0F-A687-26C731CAC6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{505CA507-F79C-4D0F-A687-26C731CAC6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{505CA507-F79C-4D0F-A687-26C731CAC6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EFBC16E-9307-466D-B2AB-5F077A67A3DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EFBC16E-9307-466D-B2AB-5F077A67A3DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EFBC16E-9307-466D-B2AB-5F077A67A3DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EFBC16E-9307-466D-B2AB-5F077A67A3DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7597852B-32E9-4EF3-A480-08254E1C09D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7597852B-32E9-4EF3-A480-08254E1C09D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7597852B-32E9-4EF3-A480-08254E1C09D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7597852B-32E9-4EF3-A480-08254E1C09D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4EA4E76-E063-4C67-85F4-43ABAD3FEB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4EA4E76-E063-4C67-85F4-43ABAD3FEB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4EA4E76-E063-4C67-85F4-43ABAD3FEB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4EA4E76-E063-4C67-85F4-43ABAD3FEB24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA45EFF-A882-4A2E-B4B1-04CB72BDB16E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA45EFF-A882-4A2E-B4B1-04CB72BDB16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA45EFF-A882-4A2E-B4B1-04CB72BDB16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA45EFF-A882-4A2E-B4B1-04CB72BDB16E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80F9B5A7-1E13-48AF-B035-68236F39C308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80F9B5A7-1E13-48AF-B035-68236F39C308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80F9B5A7-1E13-48AF-B035-68236F39C308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80F9B5A7-1E13-48AF-B035-68236F39C308}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC9EF9D4-95FA-4D7A-92DF-308F45120D56}
+	EndGlobalSection
+EndGlobal

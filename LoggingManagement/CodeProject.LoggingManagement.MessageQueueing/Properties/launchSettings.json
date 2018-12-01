@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CodeProject.LoggingManagement.MessageQueueing": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

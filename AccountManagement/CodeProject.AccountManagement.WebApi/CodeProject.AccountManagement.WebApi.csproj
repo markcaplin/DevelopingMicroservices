@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Interfaces\CodeProject.Shared.Common.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Models\CodeProject.Shared.Common.Models.csproj" />
+    <ProjectReference Include="..\..\Shared\CodeProject.Shared.Common.Utilites\CodeProject.Shared.Common.Utilities.csproj" />
+    <ProjectReference Include="..\CodeProject.AccountManagement.BusinessRules\CodeProject.AccountManagement.BusinessRules.csproj" />
+    <ProjectReference Include="..\CodeProject.AccountManagement.BusinessServices\CodeProject.AccountManagement.BusinessServices.csproj" />
+    <ProjectReference Include="..\CodeProject.AccountManagement.Data.EntityFramework\CodeProject.AccountManagement.Data.EntityFramework.csproj" />
+    <ProjectReference Include="..\CodeProject.AccountManagement.Data.Models\CodeProject.AccountManagement.Data.Models.csproj" />
+    <ProjectReference Include="..\CodeProject.AccountManagement.Interfaces\CodeProject.AccountManagement.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
