@@ -23,6 +23,7 @@ using CodeProject.PurchaseOrderManagement.Interfaces;
 using CodeProject.PurchaseOrderManagement.BusinessServices;
 using CodeProject.Shared.Common.Interfaces;
 using CodeProject.PurchaseOrderManagement.WebApi.SignalRHub;
+using Microsoft.Extensions.Hosting;
 
 namespace CodeProject.PurchaseOrderManagement.WebApi
 {
@@ -52,16 +53,16 @@ namespace CodeProject.PurchaseOrderManagement.WebApi
 
 			CorsPolicyBuilder corsBuilder = new CorsPolicyBuilder();
 
-			corsBuilder.AllowAnyHeader();
-			corsBuilder.AllowAnyMethod();
-			corsBuilder.AllowAnyOrigin();
-			corsBuilder.AllowCredentials();
-
 			services.AddCors(options =>
 			{
-				options.AddPolicy("SiteCorsPolicy", corsBuilder.Build());
+				options.AddPolicy("SiteCorsPolicy",
+					builder =>
+					{
+						builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+					});
 			});
 
+			services.AddControllers().AddNewtonsoftJson();
 
 			ConnectionStrings connectionStrings = new ConnectionStrings();
 			Configuration.GetSection("ConnectionStrings").Bind(connectionStrings);
@@ -89,35 +90,41 @@ namespace CodeProject.PurchaseOrderManagement.WebApi
 
 			services.AddScoped<SecurityFilter>();
 
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
 			services.AddSignalR();
 
 		}
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+	
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
+			app.Use(async (ctx, next) =>
+			{
+				await next();
+				if (ctx.Response.StatusCode == 204)
+				{
+					ctx.Response.ContentLength = 0;
+				}
+			});
 
-			app.UseCors("SiteCorsPolicy");
 			app.UseAuthentication();
 
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
 			}
-			else
-			{
-				app.UseHsts();
-			}
 
 			app.UseHttpsRedirection();
 
-			app.UseMvc();
+			app.UseRouting();
 
-			app.UseSignalR(routes =>
+			app.UseCors("SiteCorsPolicy");
+
+			app.UseAuthorization();
+
+			app.UseEndpoints(endpoints =>
 			{
-				routes.MapHub<MessageQueueHub>("/messageQueueHub");
+				endpoints.MapControllers();
+				endpoints.MapHub<MessageQueueHub>("/messageQueueHub");
 			});
 
 		}

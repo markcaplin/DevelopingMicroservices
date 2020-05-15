@@ -83,9 +83,10 @@ namespace CodeProject.AccountManagement.BusinessServices
 
 				await _accountManagementDataService.CreateUser(user);
 
-				await _accountManagementDataService.UpdateDatabase();
+				//await _accountManagementDataService.UpdateDatabase();
 
 				_accountManagementDataService.CommitTransaction();
+
 				returnResponse.ReturnStatus = true;
 
 			}
@@ -205,6 +206,7 @@ namespace CodeProject.AccountManagement.BusinessServices
 				await _accountManagementDataService.UpdateUser(user);
 
 				await _accountManagementDataService.UpdateDatabase();
+
 				_accountManagementDataService.CommitTransaction();
 
 				returnResponse.ReturnStatus = true;

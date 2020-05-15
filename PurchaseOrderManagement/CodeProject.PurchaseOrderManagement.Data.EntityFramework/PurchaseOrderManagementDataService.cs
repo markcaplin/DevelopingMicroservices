@@ -8,10 +8,11 @@ using System.Transactions;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Data.Common;
 using CodeProject.Shared.Common.Models;
 using System.Linq.Dynamic.Core;
+using Microsoft.Data.SqlClient;
 
 namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 {
@@ -29,6 +30,8 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 			purchaseOrder.DateUpdated = dateCreated;
 
 			await dbConnection.PurchaseOrders.AddAsync(purchaseOrder);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -44,6 +47,8 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 
 			await dbConnection.PurchaseOrderDetails.AddAsync(purchaseOrderDetail);
 
+			await dbConnection.SaveChangesAsync();
+
 		}
 
 		/// <summary>
@@ -57,6 +62,8 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 			transactionQueue.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueInbound.AddAsync(transactionQueue);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -70,6 +77,8 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 			transactionQueue.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueInboundHistory.AddAsync(transactionQueue);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -83,6 +92,8 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 			transactionQueue.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueOutbound.AddAsync(transactionQueue);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -97,6 +108,8 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 			supplier.DateUpdated = dateCreated;
 
 			await dbConnection.Suppliers.AddAsync(supplier);
+
+			await dbConnection.SaveChangesAsync();
 
 		}
 
@@ -137,6 +150,8 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 			purchaseOrderNumberSequence.DateUpdated = dateCreated;
 
 			await dbConnection.PurchaseOrderNumberSequences.AddAsync(purchaseOrderNumberSequence);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -151,6 +166,8 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 			product.DateUpdated = dateCreated;
 
 			await dbConnection.Products.AddAsync(product);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -164,7 +181,7 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 
 			DbParameter productIdParameter = new SqlParameter("ProductId", productId);
 
-			Product product = await dbConnection.Products.FromSql(sqlStatement, productIdParameter).FirstOrDefaultAsync();
+			Product product = await dbConnection.Products.FromSqlRaw(sqlStatement, productIdParameter).FirstOrDefaultAsync();
 			return product;
 		}
 
@@ -179,7 +196,7 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 
 			DbParameter accountIdParameter = new SqlParameter("AccountId", accountId);
 
-			PurchaseOrderNumberSequence purchaseOrderNumberSequence = await dbConnection.PurchaseOrderNumberSequences.FromSql(sqlStatement, accountIdParameter).FirstOrDefaultAsync();
+			PurchaseOrderNumberSequence purchaseOrderNumberSequence = await dbConnection.PurchaseOrderNumberSequences.FromSqlRaw(sqlStatement, accountIdParameter).FirstOrDefaultAsync();
 			return purchaseOrderNumberSequence;
 		}
 
@@ -196,7 +213,7 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 			DbParameter supplierIdParameter = new SqlParameter("SupplierId", supplierId);
 			DbParameter accountIdParameter = new SqlParameter("AccountId", accountId);
 
-			Supplier supplier = await dbConnection.Suppliers.FromSql(sqlStatement, supplierIdParameter, accountIdParameter).FirstOrDefaultAsync();
+			Supplier supplier = await dbConnection.Suppliers.FromSqlRaw(sqlStatement, supplierIdParameter, accountIdParameter).FirstOrDefaultAsync();
 			return supplier;
 		}
 
@@ -223,7 +240,7 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 
 			DbParameter productIdParameter = new SqlParameter("ProductMasterId", productMasterId);
 
-			Product product = await dbConnection.Products.FromSql(sqlStatement, productIdParameter).FirstOrDefaultAsync();
+			Product product = await dbConnection.Products.FromSqlRaw(sqlStatement, productIdParameter).FirstOrDefaultAsync();
 			return product;
 		}
 		/// <summary>
@@ -266,7 +283,7 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 
 			SqlParameter sentToExchangeParameter = new SqlParameter("SentToExchange", false);
 
-			List<TransactionQueueOutbound> transactionQueue = await dbConnection.TransactionQueueOutbound.FromSql(
+			List<TransactionQueueOutbound> transactionQueue = await dbConnection.TransactionQueueOutbound.FromSqlRaw(
 				sqlStatement, sentToExchangeParameter).ToListAsync();
 
 			return transactionQueue;
@@ -339,6 +356,8 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 			transactionQueueSemaphore.DateUpdated = dateCreated;
 
 			await dbConnection.TransactionQueueSemaphores.AddAsync(transactionQueueSemaphore);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -357,7 +376,7 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 
 			SqlParameter semaphoreKeyParameter = new SqlParameter("SemaphoreKey", semaphoreKey);
 
-			TransactionQueueSemaphore transactionQueue = await dbConnection.TransactionQueueSemaphores.FromSql(sqlStatement, semaphoreKeyParameter).FirstOrDefaultAsync();
+			TransactionQueueSemaphore transactionQueue = await dbConnection.TransactionQueueSemaphores.FromSqlRaw(sqlStatement, semaphoreKeyParameter).FirstOrDefaultAsync();
 
 			return transactionQueue;
 
@@ -569,6 +588,8 @@ namespace CodeProject.PurchaseOrderManagement.Data.EntityFramework
 			transactionQueueItem.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueOutboundHistory.AddAsync(transactionQueueItem);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>

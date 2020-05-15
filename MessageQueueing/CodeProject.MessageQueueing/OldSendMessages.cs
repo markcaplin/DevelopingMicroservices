@@ -118,7 +118,7 @@ namespace CodeProject.MessageQueueing
 		{
 			//ResponseModel<List<MessageQueue>> messages = await _messageProcessor.SendQueueMessages(_messageQueueing, _appConfig.Value.OutboundSemaphoreKey, _connectionStrings.Value);
 			//_logger.LogInformation("total messages " + messages.Entity.Count.ToString() + " sent at " + DateTime.Now);
-
+			await Task.Delay(1);
 		}
 
 		public Task StopAsync(CancellationToken cancellationToken)

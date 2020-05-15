@@ -22,6 +22,7 @@ using CodeProject.SalesOrderManagement.WebApi.ActionFilters;
 using CodeProject.SalesOrderManagement.Interfaces;
 using CodeProject.SalesOrderManagement.BusinessServices;
 using CodeProject.SalesOrderManagement.WebApi.SignalRHub;
+using Microsoft.Extensions.Hosting;
 
 namespace CodeProject.SalesOrderManagement.WebApi
 {
@@ -37,20 +38,17 @@ namespace CodeProject.SalesOrderManagement.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-			CorsPolicyBuilder corsBuilder = new CorsPolicyBuilder();
-
-			corsBuilder.AllowAnyHeader();
-			corsBuilder.AllowAnyMethod();
-			corsBuilder.AllowAnyOrigin();
-			corsBuilder.AllowCredentials();
 
 			services.AddCors(options =>
 			{
-				options.AddPolicy("SiteCorsPolicy", corsBuilder.Build());
+				options.AddPolicy("SiteCorsPolicy",
+					builder =>
+					{
+						builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+					});
 			});
 
-			//AppSettings appSettings = new AppSettings();
-			//Configuration.GetSection("AppSettings").Bind(appSettings);
+			services.AddControllers().AddNewtonsoftJson();
 
 			ConnectionStrings connectionStrings = new ConnectionStrings();
 			Configuration.GetSection("ConnectionStrings").Bind(connectionStrings);
@@ -78,35 +76,42 @@ namespace CodeProject.SalesOrderManagement.WebApi
 
 			services.AddScoped<SecurityFilter>();
 
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
 			services.AddSignalR();
 
 		}
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-			app.UseCors("SiteCorsPolicy");
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		{
+			app.Use(async (ctx, next) =>
+			{
+				await next();
+				if (ctx.Response.StatusCode == 204)
+				{
+					ctx.Response.ContentLength = 0;
+				}
+			});
+
 			app.UseAuthentication();
 
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
 			}
-			else
-			{
-				app.UseHsts();
-			}
 
 			app.UseHttpsRedirection();
 
-			app.UseMvc();
+			app.UseRouting();
 
-			app.UseSignalR(routes =>
+			app.UseCors("SiteCorsPolicy");
+
+			app.UseAuthorization();
+
+			app.UseEndpoints(endpoints =>
 			{
-				routes.MapHub<MessageQueueHub>("/messageQueueHub");
+				endpoints.MapControllers();
+				endpoints.MapHub<MessageQueueHub>("/messageQueueHub");
 			});
+
 		}
 	}
 }

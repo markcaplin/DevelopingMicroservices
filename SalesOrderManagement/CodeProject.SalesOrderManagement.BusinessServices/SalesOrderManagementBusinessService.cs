@@ -58,7 +58,7 @@ namespace CodeProject.SalesOrderManagement.BusinessServices
 			
 				await _salesOrderManagementDataService.CreateProduct(product);
 
-				await _salesOrderManagementDataService.UpdateDatabase();
+				//await _salesOrderManagementDataService.UpdateDatabase();
 
 				_salesOrderManagementDataService.CommitTransaction();
 
@@ -111,7 +111,7 @@ namespace CodeProject.SalesOrderManagement.BusinessServices
 			
 				await _salesOrderManagementDataService.UpdateProduct(product);
 
-				await _salesOrderManagementDataService.UpdateDatabase();
+				//await _salesOrderManagementDataService.UpdateDatabase();
 
 				_salesOrderManagementDataService.CommitTransaction();
 
@@ -239,7 +239,7 @@ namespace CodeProject.SalesOrderManagement.BusinessServices
 
 				await _salesOrderManagementDataService.CreateCustomer(customer);
 
-				await _salesOrderManagementDataService.UpdateDatabase();
+				//await _salesOrderManagementDataService.UpdateDatabase();
 
 				_salesOrderManagementDataService.CommitTransaction();
 
@@ -305,7 +305,7 @@ namespace CodeProject.SalesOrderManagement.BusinessServices
 
 				await _salesOrderManagementDataService.CreateSalesOrder(salesOrder);
 
-				await _salesOrderManagementDataService.UpdateDatabase();
+				//await _salesOrderManagementDataService.UpdateDatabase();
 
 				_salesOrderManagementDataService.CommitTransaction();
 
@@ -385,7 +385,7 @@ namespace CodeProject.SalesOrderManagement.BusinessServices
 
 				await _salesOrderManagementDataService.CreateOutboundTransactionQueue(transactionQueue);
 
-				await _salesOrderManagementDataService.UpdateDatabase();
+				//await _salesOrderManagementDataService.UpdateDatabase();
 
 				_salesOrderManagementDataService.CommitTransaction();
 

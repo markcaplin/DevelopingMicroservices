@@ -73,7 +73,7 @@ namespace CodeProject.InventoryManagement.BusinessServices
 
 					await _inventoryManagementDataService.CreateProduct(product);
 
-					await _inventoryManagementDataService.UpdateDatabase();
+					//await _inventoryManagementDataService.UpdateDatabase();
 
 					TransactionQueueOutbound transactionQueue = new TransactionQueueOutbound();
 					transactionQueue.Payload = GenerateProductUpdatePayload(product);
@@ -82,7 +82,7 @@ namespace CodeProject.InventoryManagement.BusinessServices
 
 					await _inventoryManagementDataService.CreateOutboundTransactionQueue(transactionQueue);
 
-					await _inventoryManagementDataService.UpdateDatabase();
+					//await _inventoryManagementDataService.UpdateDatabase();
 
 					_inventoryManagementDataService.CommitTransaction();
 
@@ -136,7 +136,7 @@ namespace CodeProject.InventoryManagement.BusinessServices
 
 					await _inventoryManagementDataService.CreateOutboundTransactionQueue(transactionQueue);
 
-					await _inventoryManagementDataService.UpdateDatabase();
+					//await _inventoryManagementDataService.UpdateDatabase();
 
 					_inventoryManagementDataService.CommitTransaction();
 				}
@@ -196,7 +196,7 @@ namespace CodeProject.InventoryManagement.BusinessServices
 
 				await _inventoryManagementDataService.CreateProduct(product);
 
-				await _inventoryManagementDataService.UpdateDatabase();
+				//await _inventoryManagementDataService.UpdateDatabase();
 
 				TransactionQueueOutbound transactionQueue = new TransactionQueueOutbound();
 				transactionQueue.Payload = GenerateProductUpdatePayload(product);
@@ -205,7 +205,7 @@ namespace CodeProject.InventoryManagement.BusinessServices
 
 				await _inventoryManagementDataService.CreateOutboundTransactionQueue(transactionQueue);
 
-				await _inventoryManagementDataService.UpdateDatabase();
+				//await _inventoryManagementDataService.UpdateDatabase();
 
 				_inventoryManagementDataService.CommitTransaction();
 
@@ -278,7 +278,7 @@ namespace CodeProject.InventoryManagement.BusinessServices
 
 				await _inventoryManagementDataService.CreateOutboundTransactionQueue(transactionQueue);
 
-				await _inventoryManagementDataService.UpdateDatabase();
+				//await _inventoryManagementDataService.UpdateDatabase();
 
 				_inventoryManagementDataService.CommitTransaction();
 
@@ -576,7 +576,7 @@ namespace CodeProject.InventoryManagement.BusinessServices
 
 				await _inventoryManagementDataService.CreateOutboundTransactionQueue(transactionQueue);
 
-				await _inventoryManagementDataService.UpdateDatabase();
+				//await _inventoryManagementDataService.UpdateDatabase();
 
 				_inventoryManagementDataService.CommitTransaction();
 
@@ -705,7 +705,8 @@ namespace CodeProject.InventoryManagement.BusinessServices
 
 				await _inventoryManagementDataService.CreateOutboundTransactionQueue(transactionQueue);
 
-				await _inventoryManagementDataService.UpdateDatabase();
+				//await _inventoryManagementDataService.UpdateDatabase();
+
 				//
 				//	Commit Transaction
 				//

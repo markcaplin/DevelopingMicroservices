@@ -8,7 +8,8 @@ using System.Transactions;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Data.Common;
 using System.Linq.Dynamic.Core;
 using CodeProject.Shared.Common.Models;
@@ -29,6 +30,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 			product.DateUpdated = dateCreated;
 
 			await dbConnection.Products.AddAsync(product);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -43,6 +46,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 
 			await dbConnection.TransactionQueueOutbound.AddAsync(transactionQueue);
 
+			await dbConnection.SaveChangesAsync();
+
 		}
 
 		/// <summary>
@@ -56,6 +61,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 			transactionQueue.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueInbound.AddAsync(transactionQueue);
+
+			await dbConnection.SaveChangesAsync();
 
 		}
 		/// <summary>
@@ -90,7 +97,7 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 
 			DbParameter productIdParameter = new SqlParameter("ProductId", productId);
 
-			Product product = await dbConnection.Products.FromSql(sqlStatement, productIdParameter).FirstOrDefaultAsync();
+			Product product = await dbConnection.Products.FromSqlRaw(sqlStatement, productIdParameter).FirstOrDefaultAsync();
 			return product;
 		}
 
@@ -109,7 +116,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 
 			SqlParameter sentToExchangeParameter = new SqlParameter("SentToExchange", false);
 	
-			List<TransactionQueueOutbound> transactionQueue = await dbConnection.TransactionQueueOutbound.FromSql(
+			List<TransactionQueueOutbound> transactionQueue = await dbConnection
+				.TransactionQueueOutbound.FromSqlRaw(
 				sqlStatement, sentToExchangeParameter).OrderBy(x=>x.TransactionQueueOutboundId).ToListAsync();
 
 			return transactionQueue;
@@ -132,7 +140,7 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 			
 			SqlParameter semaphoreKeyParameter = new SqlParameter("SemaphoreKey", semaphoreKey);
 
-			TransactionQueueSemaphore transactionQueue = await dbConnection.TransactionQueueSemaphores.FromSql(sqlStatement, semaphoreKeyParameter).FirstOrDefaultAsync();
+			TransactionQueueSemaphore transactionQueue = await dbConnection.TransactionQueueSemaphores.FromSqlRaw(sqlStatement, semaphoreKeyParameter).FirstOrDefaultAsync();
 
 			return transactionQueue;
 
@@ -213,6 +221,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 			transactionQueueItem.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueOutboundHistory.AddAsync(transactionQueueItem);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -250,6 +260,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 			transactionQueueSemaphore.DateUpdated = dateCreated;
 
 			await dbConnection.TransactionQueueSemaphores.AddAsync(transactionQueueSemaphore);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 
@@ -264,6 +276,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 			transactionQueue.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueInboundHistory.AddAsync(transactionQueue);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -278,6 +292,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 			purchaseOrder.DateUpdated = dateCreated;
 
 			await dbConnection.PurchaseOrders.AddAsync(purchaseOrder);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -292,6 +308,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 			purchaseOrderDetail.DateUpdated = dateCreated;
 
 			await dbConnection.PurchaseOrderDetails.AddAsync(purchaseOrderDetail);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -505,6 +523,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 		public async Task CreateInventoryTransaction(InventoryTransaction inventoryTransaction)
 		{
 			await dbConnection.InventoryTransactions.AddAsync(inventoryTransaction);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -574,6 +594,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 			salesOrder.DateUpdated = dateCreated;
 
 			await dbConnection.SalesOrders.AddAsync(salesOrder);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -588,6 +610,8 @@ namespace CodeProject.InventoryManagement.Data.EntityFramework
 			salesOrderDetail.DateUpdated = dateCreated;
 
 			await dbConnection.SalesOrderDetails.AddAsync(salesOrderDetail);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 

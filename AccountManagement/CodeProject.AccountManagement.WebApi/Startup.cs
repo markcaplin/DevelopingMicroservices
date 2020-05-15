@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using CodeProject.AccountManagement.WebApi.ActionFilters;
 using CodeProject.AccountManagement.Interfaces;
 using CodeProject.AccountManagement.BusinessServices;
+using Microsoft.Extensions.Hosting;
 
 namespace CodeProject.AccountManagement.WebApi
 {
@@ -39,17 +40,16 @@ namespace CodeProject.AccountManagement.WebApi
 		public void ConfigureServices(IServiceCollection services)
         {
           
-			CorsPolicyBuilder corsBuilder = new CorsPolicyBuilder();
-
-			corsBuilder.AllowAnyHeader();
-			corsBuilder.AllowAnyMethod();
-			corsBuilder.AllowAnyOrigin();
-			corsBuilder.AllowCredentials();
-
 			services.AddCors(options =>
 			{
-				options.AddPolicy("SiteCorsPolicy", corsBuilder.Build());
+				options.AddPolicy("SiteCorsPolicy",
+					builder =>
+					{
+						builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+					});
 			});
+
+			services.AddControllers().AddNewtonsoftJson();
 
 			ConnectionStrings connectionStrings = new ConnectionStrings();
 			Configuration.GetSection("ConnectionStrings").Bind(connectionStrings);
@@ -79,29 +79,40 @@ namespace CodeProject.AccountManagement.WebApi
 
 			services.AddScoped<SecurityFilter>();
 
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
 		}
 
+	
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-           
-			app.UseCors("SiteCorsPolicy");
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		{
+			app.Use(async (ctx, next) =>
+			{
+				await next();
+				if (ctx.Response.StatusCode == 204)
+				{
+					ctx.Response.ContentLength = 0;
+				}
+			});
+
 			app.UseAuthentication();
 
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
 			}
-			else
-			{
-				app.UseHsts();
-			}
 
 			app.UseHttpsRedirection();
 
-			app.UseMvc();
+			app.UseRouting();
+
+			app.UseCors("SiteCorsPolicy");
+
+			app.UseAuthorization();
+
+			app.UseEndpoints(endpoints =>
+			{
+				endpoints.MapControllers();
+			});
 		}
-    }
+	}
 }

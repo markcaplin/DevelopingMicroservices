@@ -8,7 +8,8 @@ using System.Transactions;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Data.Common;
 using CodeProject.Shared.Common.Models;
 using System.Linq.Dynamic.Core;
@@ -29,6 +30,9 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 			salesOrder.DateUpdated = dateCreated;
 
 			await dbConnection.SalesOrders.AddAsync(salesOrder);
+
+			await dbConnection.SaveChangesAsync();
+
 		}
 
 		/// <summary>
@@ -44,6 +48,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 
 			await dbConnection.SalesOrderDetails.AddAsync(salesOrderDetail);
 
+			await dbConnection.SaveChangesAsync();
+
 		}
 
 		/// <summary>
@@ -57,6 +63,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 			transactionQueue.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueInbound.AddAsync(transactionQueue);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -70,6 +78,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 			transactionQueue.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueInboundHistory.AddAsync(transactionQueue);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -83,6 +93,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 			transactionQueue.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueOutbound.AddAsync(transactionQueue);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -98,6 +110,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 
 			await dbConnection.Customers.AddAsync(customer);
 
+			await dbConnection.SaveChangesAsync();
+
 		}
 
 		/// <summary>
@@ -112,6 +126,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 			product.DateUpdated = dateCreated;
 
 			await dbConnection.Products.AddAsync(product);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -125,7 +141,7 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 
 			DbParameter productIdParameter = new SqlParameter("ProductId", productId);
 
-			Product product = await dbConnection.Products.FromSql(sqlStatement, productIdParameter).FirstOrDefaultAsync();
+			Product product = await dbConnection.Products.FromSqlRaw(sqlStatement, productIdParameter).FirstOrDefaultAsync();
 			return product;
 		}
 		/// <summary>
@@ -139,7 +155,7 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 
 			DbParameter productIdParameter = new SqlParameter("ProductMasterId", productMasterId);
 
-			Product product = await dbConnection.Products.FromSql(sqlStatement, productIdParameter).FirstOrDefaultAsync();
+			Product product = await dbConnection.Products.FromSqlRaw(sqlStatement, productIdParameter).FirstOrDefaultAsync();
 			return product;
 		}
 		/// <summary>
@@ -170,8 +186,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 
 			SqlParameter sentToExchangeParameter = new SqlParameter("SentToExchange", false);
 
-			List<TransactionQueueOutbound> transactionQueue = await dbConnection.TransactionQueueOutbound.FromSql(
-				sqlStatement, sentToExchangeParameter).ToListAsync();
+			List<TransactionQueueOutbound> transactionQueue = await dbConnection.TransactionQueueOutbound
+				.FromSqlRaw(sqlStatement, sentToExchangeParameter).ToListAsync();
 
 			return transactionQueue;
 
@@ -243,6 +259,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 			transactionQueueSemaphore.DateUpdated = dateCreated;
 
 			await dbConnection.TransactionQueueSemaphores.AddAsync(transactionQueueSemaphore);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -261,7 +279,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 
 			SqlParameter semaphoreKeyParameter = new SqlParameter("SemaphoreKey", semaphoreKey);
 
-			TransactionQueueSemaphore transactionQueue = await dbConnection.TransactionQueueSemaphores.FromSql(sqlStatement, semaphoreKeyParameter).FirstOrDefaultAsync();
+			TransactionQueueSemaphore transactionQueue = await dbConnection.TransactionQueueSemaphores
+				.FromSqlRaw(sqlStatement, semaphoreKeyParameter).FirstOrDefaultAsync();
 
 			return transactionQueue;
 
@@ -354,7 +373,9 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 			DbParameter customerIdParameter = new SqlParameter("CustomerId", customerId);
 			DbParameter accountIdParameter = new SqlParameter("AccountId", accountId);
 
-			Customer customer = await dbConnection.Customers.FromSql(sqlStatement, customerIdParameter, accountIdParameter).FirstOrDefaultAsync();
+			Customer customer = await dbConnection.Customers
+				.FromSqlRaw(sqlStatement, customerIdParameter, accountIdParameter).FirstOrDefaultAsync();
+
 			return customer;
 		}
 
@@ -381,7 +402,9 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 
 			DbParameter accountIdParameter = new SqlParameter("AccountId", accountId);
 
-			SalesOrderNumberSequence salesOrderNumberSequence = await dbConnection.SalesOrderNumberSequences.FromSql(sqlStatement, accountIdParameter).FirstOrDefaultAsync();
+			SalesOrderNumberSequence salesOrderNumberSequence = await dbConnection.SalesOrderNumberSequences
+				.FromSqlRaw(sqlStatement, accountIdParameter).FirstOrDefaultAsync();
+
 			return salesOrderNumberSequence;
 		}
 
@@ -517,6 +540,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 			salesOrderNumberSequence.DateUpdated = dateCreated;
 
 			await dbConnection.SalesOrderNumberSequences.AddAsync(salesOrderNumberSequence);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -569,6 +594,8 @@ namespace CodeProject.SalesOrderManagement.Data.EntityFramework
 			transactionQueueItem.DateCreated = dateCreated;
 
 			await dbConnection.TransactionQueueOutboundHistory.AddAsync(transactionQueueItem);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>

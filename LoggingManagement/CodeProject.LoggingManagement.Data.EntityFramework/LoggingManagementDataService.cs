@@ -8,7 +8,8 @@ using System.Transactions;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Data.Common;
 
 namespace CodeProject.LoggingManagement.Data.EntityFramework
@@ -26,6 +27,8 @@ namespace CodeProject.LoggingManagement.Data.EntityFramework
 			acknowledgementsQueue.DateCreated = dateCreated;
 			
 			await dbConnection.AcknowledgementsQueue.AddAsync(acknowledgementsQueue);
+
+			await dbConnection.SaveChangesAsync();
 		}
 		/// <summary>
 		/// Create Messages Sent
@@ -40,6 +43,8 @@ namespace CodeProject.LoggingManagement.Data.EntityFramework
 
 			await dbConnection.MessagesSent.AddAsync(messagesSent);
 
+			await dbConnection.SaveChangesAsync();
+
 		}
 		/// <summary>
 		/// Create Messages Received
@@ -52,6 +57,8 @@ namespace CodeProject.LoggingManagement.Data.EntityFramework
 			messagesReceived.DateCreated = dateCreated;
 			
 			await dbConnection.MessagesReceived.AddAsync(messagesReceived);
+
+			await dbConnection.SaveChangesAsync();
 
 		}
 
@@ -149,6 +156,8 @@ namespace CodeProject.LoggingManagement.Data.EntityFramework
 			transactionQueueSemaphore.DateUpdated = dateCreated;
 
 			await dbConnection.TransactionQueueSemaphores.AddAsync(transactionQueueSemaphore);
+
+			await dbConnection.SaveChangesAsync();
 		}
 
 		/// <summary>
@@ -167,7 +176,7 @@ namespace CodeProject.LoggingManagement.Data.EntityFramework
 
 			SqlParameter semaphoreKeyParameter = new SqlParameter("SemaphoreKey", semaphoreKey);
 
-			TransactionQueueSemaphore transactionQueue = await dbConnection.TransactionQueueSemaphores.FromSql(sqlStatement, semaphoreKeyParameter).FirstOrDefaultAsync();
+			TransactionQueueSemaphore transactionQueue = await dbConnection.TransactionQueueSemaphores.FromSqlRaw(sqlStatement, semaphoreKeyParameter).FirstOrDefaultAsync();
 
 			return transactionQueue;
 

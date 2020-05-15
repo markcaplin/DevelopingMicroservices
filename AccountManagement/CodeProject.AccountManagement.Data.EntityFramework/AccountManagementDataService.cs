@@ -25,6 +25,8 @@ namespace CodeProject.AccountManagement.Data.EntityFramework
 			user.DateUpdated = dateCreated;
 
 			await dbConnection.Users.AddAsync(user);
+
+			await dbConnection.SaveChangesAsync();
 		}
 		/// <summary>
 		/// Create Account
@@ -38,6 +40,9 @@ namespace CodeProject.AccountManagement.Data.EntityFramework
 			account.DateUpdated = dateCreated;
 
 			await dbConnection.Accounts.AddAsync(account);
+
+			await dbConnection.SaveChangesAsync();
+
 		}
 		/// <summary>
 		/// Update User

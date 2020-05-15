@@ -72,7 +72,7 @@ namespace CodeProject.PurchaseOrderManagement.BusinessServices
 
 				await _purchaseOrderManagementDataService.CreateSupplier(supplier);
 
-				await _purchaseOrderManagementDataService.UpdateDatabase();
+				//await _purchaseOrderManagementDataService.UpdateDatabase();
 
 				_purchaseOrderManagementDataService.CommitTransaction();
 
@@ -138,7 +138,7 @@ namespace CodeProject.PurchaseOrderManagement.BusinessServices
 
 				await _purchaseOrderManagementDataService.CreatePurchaseOrder(purchaseOrder);
 
-				await _purchaseOrderManagementDataService.UpdateDatabase();
+				//await _purchaseOrderManagementDataService.UpdateDatabase();
 
 				_purchaseOrderManagementDataService.CommitTransaction();
 
@@ -218,7 +218,7 @@ namespace CodeProject.PurchaseOrderManagement.BusinessServices
 
 				await _purchaseOrderManagementDataService.CreateOutboundTransactionQueue(transactionQueue);
 
-				await _purchaseOrderManagementDataService.UpdateDatabase();
+				//await _purchaseOrderManagementDataService.UpdateDatabase();
 
 				_purchaseOrderManagementDataService.CommitTransaction();
 
@@ -304,7 +304,7 @@ namespace CodeProject.PurchaseOrderManagement.BusinessServices
 
 				await _purchaseOrderManagementDataService.CreatePurchaseOrderDetail(purchaseOrderDetail);
 
-				await _purchaseOrderManagementDataService.UpdateDatabase();
+				//await _purchaseOrderManagementDataService.UpdateDatabase();
 
 				_purchaseOrderManagementDataService.CommitTransaction();
 
@@ -412,7 +412,7 @@ namespace CodeProject.PurchaseOrderManagement.BusinessServices
 
 				await _purchaseOrderManagementDataService.UpdatePurchaseOrderDetail(purchaseOrderDetail);
 
-				await _purchaseOrderManagementDataService.UpdateDatabase();
+				//await _purchaseOrderManagementDataService.UpdateDatabase();
 
 				_purchaseOrderManagementDataService.CommitTransaction();
 
