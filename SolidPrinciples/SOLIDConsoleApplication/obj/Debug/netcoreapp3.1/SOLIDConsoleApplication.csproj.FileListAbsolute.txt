@@ -1,0 +1,13 @@
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\bin\Debug\netcoreapp3.1\SOLIDConsoleApplication.exe
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\bin\Debug\netcoreapp3.1\SOLIDConsoleApplication.deps.json
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\bin\Debug\netcoreapp3.1\SOLIDConsoleApplication.runtimeconfig.json
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\bin\Debug\netcoreapp3.1\SOLIDConsoleApplication.runtimeconfig.dev.json
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\bin\Debug\netcoreapp3.1\SOLIDConsoleApplication.dll
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\bin\Debug\netcoreapp3.1\SOLIDConsoleApplication.pdb
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\obj\Debug\netcoreapp3.1\SOLIDConsoleApplication.csproj.CoreCompileInputs.cache
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\obj\Debug\netcoreapp3.1\SOLIDConsoleApplication.AssemblyInfoInputs.cache
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\obj\Debug\netcoreapp3.1\SOLIDConsoleApplication.AssemblyInfo.cs
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\obj\Debug\netcoreapp3.1\SOLIDConsoleApplication.dll
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\obj\Debug\netcoreapp3.1\SOLIDConsoleApplication.pdb
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\obj\Debug\netcoreapp3.1\SOLIDConsoleApplication.genruntimeconfig.cache
+C:\MyFiles\CodeProject.Microservices\DevelopingMicroservices\SolidPrinciples\SOLIDConsoleApplication\obj\Debug\netcoreapp3.1\SOLIDConsoleApplication.csprojAssemblyReference.cache
